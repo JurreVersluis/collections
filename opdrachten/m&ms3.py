@@ -1,4 +1,5 @@
 import random
+
 MenMs = ['oranje', 'blauw', 'groen', 'bruin']
 zak = []
 hoeveelkleuren = 0
@@ -44,10 +45,25 @@ if not'groen' in zak:
 if not'bruin' in zak:
     mnmDictionaryBag.pop('bruin')
 
-
 print(zak)
 print('')
 for key, value in mnmDictionaryBag.items():
     print(key, value)
 print('')
 print(len(zak))
+
+print('-----------!gesorteerd!------------')
+
+
+def sorteren(soort):
+    if soort == 'lijst':
+        print(sorted(zak))
+    elif soort == 'boek':
+        sort_orders = sorted(mnmDictionaryBag.items(), key=lambda x: x[1])
+        for i in sort_orders:
+            print(i[0], i[1])
+
+
+sorteren(soort='lijst')
+print('')
+sorteren(soort='boek')
